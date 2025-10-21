@@ -1,0 +1,26 @@
+.About-values{
+    display:flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+}
+.Values-title{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.Values-sections{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+}
+@media (max-width: 768px){
+    .Values-sections{
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        gap: 40px;
+    }
+}

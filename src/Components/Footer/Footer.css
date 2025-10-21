@@ -1,0 +1,70 @@
+.Footer{
+    display:flex;
+    flex-direction: column;
+    color:#fff;
+    background:#170D0A ;
+    padding-top: 5%;
+    padding-bottom: 2%;
+}
+.top-footer{
+    display:flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 2%;
+    
+}
+.logontext{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    width: 30%;
+}
+.logontext img{
+    width: 50px;
+    
+}
+.navigation{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+ul{
+    display: flex;
+    flex-direction:column;
+    gap:15px;
+    list-style-type: none;
+    text-align: left;
+
+}
+.terms{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+
+}
+.contact-info{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+.bottom-footer{
+    text-align: center;
+    border-top: solid #5e5e5e 1px;
+    padding-top: 1%;
+    
+
+}
+@media (max-width: 768px){
+    .logontext p{
+        display: none;
+       
+    }
+    .top-footer{
+        gap:20px;
+        justify-content: center;
+        
+        
+    }
+}
+
+

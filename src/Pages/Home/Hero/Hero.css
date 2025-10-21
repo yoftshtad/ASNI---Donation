@@ -1,0 +1,49 @@
+.Hero{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    width:100%;
+    height: 100vh;
+    padding-top: 8%;
+    background: url(../../../assets//Images//Hero_background.png)
+}
+.left-side-home{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.right-side-home img{
+    width: 450px;
+}
+
+p{
+    font-size: 16px;
+    line-height: 26px;
+}
+.buttons{
+    display: flex;
+    gap: 30px;
+}
+@media(max-width: 768px){
+    .Hero{
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 150px;
+        padding-bottom:10%;
+        gap: 30px;
+        height: 120vh;
+    }
+    .left-side-home{
+        width: 90%;
+        text-align: center;
+        
+    }
+    .buttons{
+        justify-content: center;
+    }
+    .right-side-home img{
+        width: 350px;
+    }
+    
+}

@@ -1,0 +1,11 @@
+.About{
+    margin-top: -10px;
+    display:flex;
+    flex-direction: column;
+    gap: 70px; 
+
+    
+}
+.About .nav-link{
+    color: #fff;
+}

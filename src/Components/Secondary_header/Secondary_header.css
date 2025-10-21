@@ -1,0 +1,29 @@
+.header{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    gap: 5%;
+    align-items:center;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background: #3C7965;
+    color: #fff;
+    
+}
+.Email{
+    display:flex;
+    gap:10px;
+    align-items: center;
+}
+.Email img{
+    width: 30px;
+}
+.Phone{
+    display:flex;
+    gap:10px;
+    align-items: center;
+}
+.Phone img{
+    width: 30px;
+}

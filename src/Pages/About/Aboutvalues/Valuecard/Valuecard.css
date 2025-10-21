@@ -1,0 +1,21 @@
+.valuecard{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fff;
+    text-align: center;
+    align-items: center;
+    padding: 30px;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: rgba(137, 107, 58, 0.2) 0px 7px 29px 0px;
+
+
+}
+@media (max-width: 768px){
+    .valuecard{
+        width: 70%; 
+        
+        
+    }
+}

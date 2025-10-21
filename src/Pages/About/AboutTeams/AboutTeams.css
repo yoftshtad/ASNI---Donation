@@ -1,0 +1,40 @@
+.About-teams{
+    display:flex;
+    flex-direction: column;
+    gap: 60px;    
+    text-align: center;
+    padding-bottom: 6%;
+}
+.Teams-title{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.Team-members{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15%;
+}
+.Team-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+}
+.Team-box img{
+    width: 120px;
+}
+@media(max-width: 768px){
+    .Team-box img{
+        width: 70px;
+    }
+    .Team-members{
+        justify-content: space-between;
+        width: 100%;
+        gap: auto;
+    }
+    
+}

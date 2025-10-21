@@ -1,0 +1,5 @@
+export {default as AboutIntro} from './AboutIntro/AboutIntro'
+export {default as AboutStory} from './AboutStory/AboutStory'
+export {default as AboutValues} from './Aboutvalues/AboutValues'
+export {default as AboutWorks} from './AboutWorks/AboutWorks'
+export {default as AboutTeams} from './AboutTeams/AboutTeams'

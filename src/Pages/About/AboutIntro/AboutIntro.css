@@ -1,0 +1,14 @@
+.About-Intro{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+    width:100%;
+    color: #fff;
+    height: 50vh;
+    padding-top: 8%;
+    background-image: url(../../../assets/Images/About_background.png);
+
+}

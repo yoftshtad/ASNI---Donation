@@ -1,0 +1,35 @@
+.About-story{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    
+}
+.right-side-story{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    width: 50%;
+}
+.left-side-story img{
+    width:80%;
+}
+
+
+@media(max-width: 768px){
+    .About-story{
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 60px;
+        
+    }
+    .right-side-story{
+        width: 90%;
+    }
+  
+    .left-side-story{
+        align-items: flex-end;
+    }
+
+
+}

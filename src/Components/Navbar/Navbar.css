@@ -1,0 +1,125 @@
+nav{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;     
+    top: 0;
+    left:0;
+    z-index: 10;
+    padding: 10px 0;
+    
+}
+.nav-link{
+    display: flex;
+    flex-direction: row;
+}
+
+img{
+    width:50px;
+}
+
+.dark-nav{
+    background: #f4f4f4;
+    
+    
+}
+/* About page variant: force nav links to white */
+.about-nav .nav-link a, .about-nav .nav-link li, .about-nav .button-34{
+    color: #ffffff;
+}
+
+/* When sticky on About page (light background), revert links to dark text */
+.about-nav.dark-nav .nav-link a, .about-nav.dark-nav .nav-link li{
+    color: #333333;
+}
+
+/* Keep Donate button text white even when sticky on About */
+.about-nav.dark-nav .button-34{
+    color: #ffffff;
+}
+nav ul{
+    display:flex;
+    list-style-type:none;
+    align-items: center;   
+    text-decoration: none;
+    margin:0;
+    padding:0;
+    gap:30px;
+    
+}
+
+.icons{
+    display:none;
+    cursor: pointer;
+}
+.button-34 {
+  background: #F3A828;
+  border-radius: 999px;
+  box-shadow: #F3A828 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 5px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+@media(max-width: 768px){
+    .icons{
+        display: block;
+    }
+    .nav-link{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        right:0;
+        width: 250px;
+        height: 60vh;
+        color: #5d5d5d;
+        box-shadow:#f7ead4 0 10px 20px -10px ;
+        top: -800px;
+        align-items: flex-start;
+        padding-left: 20px;
+
+
+    }
+    .nav-link.active{
+        top: 120px;
+        transition: all 0.3sec ease-in;
+    }
+    .button-34{
+        box-shadow: none;
+        background:none;
+        border: 0;
+        outline:0;
+        padding:0;
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        
+    }
+    /* About page mobile: white hamburger icon */
+    .about-nav .icons, .about-nav .icons svg{
+        color: #ffffff;
+    }
+    /* About page mobile popup: force menu items black */
+    .about-nav .nav-link a, .about-nav .nav-link li, .about-nav .nav-link .button-34{
+        color: #000000;
+    }
+    
+}
+
+

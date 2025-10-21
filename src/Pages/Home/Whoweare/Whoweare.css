@@ -1,0 +1,48 @@
+.whowerare{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+
+}
+.left-side-who{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.vna{
+    display: flex;
+    gap: 30px;
+}
+button{
+    width: 180px;
+}
+.right-side-who img{
+    width: 400px;
+}
+
+
+
+
+@media (max-width: 768px){
+    .whowerare{
+        flex-direction: column;
+        gap: 50px;
+        
+    }
+
+    .left-side-who{
+        text-align: center;
+        width: 90%;     
+       
+    }
+    .vna{
+        text-align: left;
+        width:100%;
+        justify-content: space-between;
+        
+    }
+  
+}

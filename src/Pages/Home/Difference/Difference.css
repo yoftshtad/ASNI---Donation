@@ -1,0 +1,43 @@
+.Difference{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    padding-bottom: 10%;
+}
+.right-side-dif{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    width: 50%;
+   
+}
+.right-side-dif ul li{
+    padding-bottom: 10px;
+    list-style-type:disc;
+}
+
+.left-side-dif img{
+    width:70%;
+}
+
+
+@media(max-width: 768px){
+    .Difference{
+        flex-direction: column;
+        text-align: center;
+        
+    }
+    .right-side-dif{
+        width: 90%;
+    }
+    .right-side-dif ul li{
+        text-align: left;
+        margin-left: 40px;
+    }
+    .left-side-dif img{
+        display: none;
+    }
+
+
+}
