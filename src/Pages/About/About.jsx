@@ -1,20 +1,16 @@
-import React from 'react';
+import { AboutIntro, AboutStory, AboutValues, AboutWorks, AboutTeams } from './index';
 import './About.css';
-import {AboutIntro, AboutStory, AboutValues, AboutWorks, AboutTeams} from './index'
-
 
 function About() {
   return (
-    <div className="About">
-      <AboutIntro/>
-      <AboutStory/>
-      <AboutValues/>
-      <AboutWorks/>
-      <AboutTeams/>
-      
-    </div>
-    
-  )
+    <main className="About">
+      <AboutIntro />
+      <AboutStory />
+      <AboutValues />
+      <AboutWorks />
+      <AboutTeams />
+    </main>
+  );
 }
 
-export default About
+export default About;

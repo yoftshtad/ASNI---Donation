@@ -1,70 +1,192 @@
-.Footer{
-    display:flex;
-    flex-direction: column;
-    color:#fff;
-    background:#170D0A ;
-    padding-top: 5%;
-    padding-bottom: 2%;
-}
-.top-footer{
-    display:flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-bottom: 2%;
-    
-}
-.logontext{
-    display: flex;
-    flex-direction: column;
-    gap:10px;
-    width: 30%;
-}
-.logontext img{
-    width: 50px;
-    
-}
-.navigation{
-    display:flex;
-    flex-direction: column;
-    gap:20px;
-}
-ul{
-    display: flex;
-    flex-direction:column;
-    gap:15px;
-    list-style-type: none;
-    text-align: left;
-
-}
-.terms{
-    display:flex;
-    flex-direction: column;
-    gap:20px;
-
-}
-.contact-info{
-    display:flex;
-    flex-direction: column;
-    gap:20px;
-}
-.bottom-footer{
-    text-align: center;
-    border-top: solid #5e5e5e 1px;
-    padding-top: 1%;
-    
-
-}
-@media (max-width: 768px){
-    .logontext p{
-        display: none;
-       
-    }
-    .top-footer{
-        gap:20px;
-        justify-content: center;
-        
-        
-    }
+/* --- Outer wrapper: FULL WIDTH dark background --- */
+.footer {
+  width: 100%;
+  background-color: var(--brand-dark); /* Deep Forest Green */
+  color: var(--white);
+  padding-top: 80px;
+  padding-bottom: 30px;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Subtle decorative glow in the corner */
+.footer::before {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  right: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(232, 163, 23, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
 
+/* --- Inner container --- */
+.footer-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Top Section: 4 columns --- */
+.top-footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Generic Column --- */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Volkhov Serif for Column Titles */
+.footer-col h3 {
+  font-family: "Volkhov", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color); /* Gold titles */
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* --- Logo + Description Column --- */
+.footer-logo-wrapper {
+  background-color: var(--white);
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.logontext img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.logontext p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  max-width: 320px;
+}
+
+/* --- Link Lists --- */
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-col ul li {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  transition: var(--transition);
+}
+
+.footer-col ul li a {
+  color: rgba(255, 255, 255, 0.75);
+  transition: var(--transition);
+  position: relative;
+  display: inline-block;
+}
+
+/* Hover: link slides right and turns brand-yellow */
+.footer-col ul li a:hover {
+  color: var(--primary-color);
+  transform: translateX(4px);
+}
+
+/* --- Social Icons --- */
+.footer-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.footer-icons a {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px; /* Modern squircle shape */
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+
+.footer-icons a:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(232, 163, 23, 0.4);
+}
+
+/* --- Bottom Footer --- */
+.bottom-footer {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.bottom-footer p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 968px) {
+  .top-footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .logontext {
+    grid-column: 1 / -1;
+  }
+
+  .logontext p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+
+  .top-footer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .footer-col h3 {
+    font-size: 1.15rem;
+  }
+
+  .bottom-footer p {
+    font-size: 0.8rem;
+  }
+}

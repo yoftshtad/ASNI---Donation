@@ -1,0 +1,57 @@
+.stats-wrapper {
+    width: 100%;
+    background-color: var(--brand-dark);
+    padding: 60px 0;
+    margin-top: -40px; /* Overlaps the hero slightly */
+    position: relative;
+    z-index: 10;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .stat-item:last-child {
+    border-right: none;
+  }
+  
+  .stat-number {
+    font-family: "Volkhov", serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1;
+  }
+  
+  .stat-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 20px;
+    }
+    .stat-item:nth-child(2) {
+      border-right: none;
+    }
+    .stat-number {
+      font-size: 2.25rem;
+    }
+  }

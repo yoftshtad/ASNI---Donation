@@ -1,147 +1,216 @@
-nav{
-    width:100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: transparent;     
-    top: 0;
-    left:0;
-    z-index: 10;
-    padding: 10px 0;
-    
-}
-.nav-link{
-    display: flex;
-    flex-direction: row;
+/* --- Navbar Base (Full Width) --- */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  position: relative;
+  z-index: 1001;
 }
 
-img{
-    width:50px;
+/* --- Inner Container (Centered) --- */
+.nav-container {
+  width: 100%;
+  max-width: 1200px; /* Matches your .container class */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 5%;
 }
 
-.dark-nav{
-    background: #f4f4f4;
-    
-    
-}
-/* About page variant: force nav links to white */
-.about-nav .nav-link a, .about-nav .nav-link li, .about-nav .button-34{
-    color: #ffffff;
+/* --- Logo --- */
+.nav-logo img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  transition: var(--transition);
 }
 
-/* When sticky on About page (light background), revert links to dark text */
-.about-nav.dark-nav .nav-link a, .about-nav.dark-nav .nav-link li{
-    color: #333333;
+.nav-logo:hover img {
+  transform: scale(1.05);
 }
 
-/* Keep Donate button text white even when sticky on About */
-.about-nav.dark-nav .button-34{
-    color: #ffffff;
-}
-nav ul{
-    display:flex;
-    list-style-type:none;
-    align-items: center;   
-    text-decoration: none;
-    margin:0;
-    padding:0;
-    gap:30px;
-    
+/* --- Desktop Nav Links --- */
+.nav-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 35px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.icons{
-    display:none;
-    cursor: pointer;
+.nav-item {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--brand-dark); /* Deep Forest Green */
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.25s ease;
 }
-.button-34 {
-  background: #F3A828;
+
+/* Animated Gold Underline */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+}
+
+.nav-item:hover {
+  color: var(--primary-color);
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 100%;
+}
+
+.nav-item.active {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* --- Donate Button --- */
+.nav-donate-btn {
   border-radius: 999px;
-  box-shadow: #F3A828 0 10px 20px -10px;
-  box-sizing: border-box;
-  color: #FFFFFF;
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 15px rgba(232, 163, 23, 0.3); /* New Gold Shadow */
+}
+
+.nav-donate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(232, 163, 23, 0.5);
+}
+
+/* --- Hamburger / Close Button --- */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
   cursor: pointer;
-  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
-  opacity: 1;
-  outline: 0 solid transparent;
-  padding: 5px 18px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: fit-content;
-  word-break: break-word;
-  border: 0;
+  font-size: 1.75rem;
+  color: var(--brand-dark);
+  padding: 8px;
+  line-height: 1;
+  transition: var(--transition);
 }
 
-@media(max-width: 768px){
-    .icons{
-        display: block;
-        z-index: 1001;
-    }
-    .nav-link{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        background-color: rgb(255, 255, 255);
-        position: fixed;
-        right: -300px;
-        width: 280px;
-        height: 100vh;
-        color: #5d5d5d;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        top: 0;
-        align-items: flex-start;
-        padding: 80px 30px 30px 30px;
-        gap: 25px;
-        transition: right 0.3s ease-in-out;
-        z-index: 1000;
-        overflow-y: auto;
-    }
-    .nav-link.active{
-        right: 0;
-    }
-    .nav-link li{
-        font-size: 18px;
-        font-weight: 500;
-        padding: 8px 0;
-        border-bottom: 1px solid #f0f0f0;
-        width: 100%;
-        transition: color 0.2s ease;
-    }
-    .nav-link li:hover{
-        color: #157a6e;
-    }
-    .button-34{
-        box-shadow: none;
-        background: none;
-        border: 0;
-        outline: 0;
-        padding: 8px 0;
-        color: inherit;
-        font-family: inherit;
-        font-size: 18px;
-        font-weight: 500;
-        border-radius: 0;
-        margin-top: 0;
-        transition: color 0.2s ease;
-        border-bottom: 1px solid #f0f0f0;
-        width: 100%;
-    }
-    .button-34:hover{
-        color: #157a6e;
-        background: none;
-    }
-    /* About page mobile: white hamburger icon */
-    .about-nav .icons, .about-nav .icons svg{
-        color: #ffffff;
-    }
-    /* About page mobile popup: force menu items black */
-    .about-nav .nav-link a, .about-nav .nav-link li, .about-nav .nav-link .button-34{
-        color: #000000;
-    }
-    
+.menu-toggle:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
 }
 
+/* --- Mobile Backdrop --- */
+.nav-backdrop {
+  display: none;
+}
 
+/* ============================================
+   MOBILE STYLES
+   ============================================ */
+@media (max-width: 968px) {
+  .menu-toggle {
+    display: block;
+    z-index: 1100; /* Stays above the slide-in menu */
+  }
+
+  /* --- Slide-in Panel --- */
+  .nav-link {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.95); /* Slight transparency */
+    backdrop-filter: blur(15px); /* Premium glass effect */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 100px 30px 30px 30px;
+    box-shadow: -10px 0 40px rgba(31, 61, 51, 0.15);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1050;
+    overflow-y: auto;
+  }
+
+  .nav-link.active {
+    right: 0;
+  }
+
+  /* --- Mobile Nav Items --- */
+  .nav-link li {
+    width: 100%;
+    border-bottom: 1px solid rgba(31, 61, 51, 0.05);
+  }
+
+  .nav-item {
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: none;
+  }
+
+  .nav-item::after {
+    display: none; /* Remove underline animation on mobile */
+  }
+
+  .nav-item.active {
+    color: var(--primary-color);
+  }
+
+  /* --- Mobile Donate Button --- */
+  .nav-link li:last-child {
+    border-bottom: none;
+    margin-top: 30px;
+  }
+
+  .nav-donate-btn {
+    width: 100%;
+    text-align: center;
+    padding: 16px 24px;
+    font-size: 1.05rem;
+    box-shadow: none;
+  }
+
+  .nav-donate-btn:hover {
+    transform: none;
+  }
+
+  /* --- Backdrop --- */
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(31, 61, 51, 0.4); /* Dark green tint */
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1040;
+  }
+
+  .nav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-link {
+    width: 85vw;
+    right: -85vw;
+  }
+}

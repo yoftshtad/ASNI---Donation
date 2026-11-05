@@ -1,139 +1,180 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-}
-body{
-    background-color: #f5f5f5;
-    font-family: "Inter", sans-serif;
-}
-a{
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    line-height: 1;
+/* ============================================
+   1. FONT IMPORTS
+   ============================================ */
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Volkhov:wght@400;700&display=swap');
 
-}
-.container{
-    padding-left:5%;
-    padding-right:5%;
-}
-h1{
-    font-family: "Volkhov", serif;
-    color: #474747;
-    font-size: 45px;
-}
-h2{
-  font-size: 35px;
-}
-h3{
-  font-size: 20px;
-}
-p{
-  font-size: 16px;
-}
-
-
-
-.btn {
-  background: #F3A828;
-  border: 1px solid #F3A828;
-  border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Sansation", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 16px;
-  min-height: 40px;
-  outline: 0;
-  padding: 12px 24px;
-  text-align: center;
-  text-rendering: geometricprecision;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-}
-
-.btn:hover{    
-    color: #fff;
-    background-color: #df9921;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-    transform: translateY(-2px);
-      
-}
-.btn:active {
-    box-shadow: none;
-    transform: translateY(0);
-}
-
-.btn:active {
-  opacity: .5;
-}
-
-.btn2{
-  appearance: none;
-  background-color: transparent;
-  border: 2px solid #170D0A;
-  border-radius: 6px;
-  box-sizing: border-box;
-  color: #3B3B3B;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Sansation", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 16px;
-  margin: 0;
-  min-height: 40px;
-  min-width: 0;
-  outline: none;
-  padding: 12px 24px;
-  text-rendering: geometricprecision;
-  text-align: center;
-  text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-  
-}
-
-.btn2:disabled {
-  pointer-events: none;
-}
-
-.btn2:hover {
-  color: #343434;
-  
-  box-shadow: rgba(53, 53, 53, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
-}
-
-.btn2:active {
-  box-shadow: none;
-  transform: translateY(0);
-}
-
-
-@media (max-width:768px){
-  h1{
-    font-size: 30px;
-  }
-  h2{
-    font-size: 25px;
-  }
-  p{
-    font-size: 12px;
-  }
-}
+   /* ============================================
+      2. CSS VARIABLES (THE NEW PREMIUM PALETTE)
+      ============================================ */
+   :root {
+     /* Core Brand Colors */
+     --primary-color: #E8A317; /* Warm, premium Gold */
+     --primary-hover: #d18f12;
+     --brand-dark: #1F3D33;    /* Deep Forest Green (Main text, footer) */
+     --brand-light: #F4F7F6;   /* Soft Mint/Off-White (Backgrounds) */
+     --brand-coral: #D95F45;   /* Terracotta (Secondary accent) */
+     
+     /* UI Colors */
+     --text-dark: #1a1a1a;
+     --text-light: #5A6C7D;    /* Muted slate for readability */
+     --white: #ffffff;
+     
+     /* Structure */
+     --border-radius: 12px;    /* Slightly softer corners */
+     --transition: all 0.3s ease;
+   }
+   
+   /* ============================================
+      3. GLOBAL RESETS
+      ============================================ */
+   * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+   }
+   
+   html,
+   body {
+     width: 100%;
+     max-width: 100%;
+     overflow-x: hidden;
+     scroll-behavior: smooth;
+   }
+   
+   body {
+     background-color: var(--brand-light); /* Using the new soft background */
+     font-family: "Inter", sans-serif;
+     color: var(--text-light);
+     line-height: 1.6;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+   }
+   
+   /* Custom text selection color for a polished feel */
+   ::selection {
+     background-color: var(--primary-color);
+     color: var(--white);
+   }
+   
+   /* --- React Root & App Wrapper --- */
+   #root, .App {
+     width: 100%;
+     max-width: 100%;
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+     flex: 1;
+   }
+   
+   a {
+     text-decoration: none;
+     color: inherit;
+     transition: var(--transition);
+   }
+   
+   img {
+     max-width: 100%;
+     display: block;
+   }
+   
+   ul {
+     list-style: none;
+   }
+   
+   /* ============================================
+      4. LAYOUT CONTAINER
+      ============================================ */
+   .container {
+     width: 100%;
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 5%;
+   }
+   
+   /* ============================================
+      5. TYPOGRAPHY
+      ============================================ */
+   h1, h2, h3, h4 {
+     font-family: "Volkhov", serif;
+     color: var(--brand-dark); /* Headings now use the deep green */
+     line-height: 1.2;
+   }
+   
+   h1 { font-size: 3.25rem; margin-bottom: 1rem; letter-spacing: -0.5px; }
+   h2 { font-size: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.5px; }
+   h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+   p  { font-size: 1.05rem; margin-bottom: 1rem; }
+   
+   /* Shared section tag used across pages */
+   .section-tag {
+     display: inline-block;
+     color: var(--primary-color);
+     font-weight: 700;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     font-size: 0.85rem;
+     margin: 0 0 8px 0;
+   }
+   
+   /* ============================================
+      6. BUTTONS
+      ============================================ */
+   .btn {
+     background-color: var(--primary-color);
+     border: 2px solid var(--primary-color);
+     border-radius: var(--border-radius);
+     color: var(--white);
+     cursor: pointer;
+     display: inline-block;
+     font-family: "Inter", sans-serif;
+     font-size: 1rem;
+     font-weight: 600;
+     padding: 14px 32px; /* Slightly larger tap target */
+     text-align: center;
+     transition: var(--transition);
+     box-shadow: 0 6px 15px rgba(232, 163, 23, 0.25); /* Softer shadow */
+   }
+   
+   .btn:hover {
+     background-color: var(--primary-hover);
+     border-color: var(--primary-hover);
+     transform: translateY(-3px);
+     box-shadow: 0 10px 25px rgba(232, 163, 23, 0.35);
+   }
+   
+   .btn:active {
+     transform: translateY(0);
+   }
+   
+   .btn2 {
+     background-color: transparent;
+     border: 2px solid var(--brand-dark);
+     border-radius: var(--border-radius);
+     color: var(--brand-dark);
+     cursor: pointer;
+     display: inline-block;
+     font-family: "Inter", sans-serif;
+     font-size: 1rem;
+     font-weight: 600;
+     padding: 14px 32px;
+     text-align: center;
+     transition: var(--transition);
+   }
+   
+   .btn2:hover {
+     background-color: var(--brand-dark);
+     color: var(--white);
+     transform: translateY(-3px);
+     box-shadow: 0 8px 20px rgba(31, 61, 51, 0.15);
+   }
+   
+   /* ============================================
+      7. RESPONSIVE
+      ============================================ */
+   @media (max-width: 768px) {
+     h1 { font-size: 2.25rem; }
+     h2 { font-size: 1.85rem; }
+     h3 { font-size: 1.35rem; }
+     p { font-size: 1rem; }
+     .container { padding: 0 4%; }
+   }

@@ -1,79 +1,83 @@
-import React from 'react'
-import './Navbar.css'
-import {useState, useEffect, useRef} from 'react'
-import {Link, useLocation} from 'react-router-dom'
-import { FaBars } from "react-icons/fa6";
-import Logo from '../../assets/Icons/Logo.png'
+import { useState, useEffect, useRef } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { FaBars, FaXmark } from "react-icons/fa6";
+import Logo from '../../assets/Icons/Logo.png';
+import './Navbar.css';
+
 function Navbar() {
-  const location = useLocation();
-  const isAboutPage = location.pathname.startsWith('/about');
-  const [sticky, setSticky] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
-  
-  useEffect(()=>{
-    window.addEventListener('scroll', ()=>{
-      window.scrollY > 50 ? setSticky(true) : setSticky(false);
-    })
-  },[]);
+  const location = useLocation();
 
-  // Close menu when clicking outside
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [isOpen]);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setIsOpen(false);
       }
     };
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    if (isOpen) document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isOpen]);
 
-  const toggleMenu = ()=> {
-    setIsOpen(!isOpen);
-  };
+  const navLinks = [
+    { path: '/about', label: 'About' },
+    { path: '/gallery', label: 'Gallery' }, // <-- ADDED HERE
+    { path: '/blogs', label: 'Blogs' },
+    { path: '/contact', label: 'Contact' },
+  ];
+
   return (
-   <>
-   <nav className={`container ${sticky? 'dark-nav': ''} ${isAboutPage ? 'about-nav' : ''}`}>
-      <Link to='/'>
-      <img src={Logo} alt='logo'/>
-      </Link>
-    
-      <ul ref={menuRef} className={isOpen? 'nav-link active' : 'nav-link'} onClick={(e) => {
-        // Close menu when clicking on empty space within the menu
-        if (e.target === e.currentTarget) {
-          setIsOpen(false);
-        }
-      }}>
-        <Link to='/about' onClick={() => setIsOpen(false)}>
-        <li>About</li>
-        </Link>
-        <Link to='/blogs' onClick={() => setIsOpen(false)}>
-        <li>Blogs</li>
-        </Link>
+    <>
+      <nav className="navbar">
+        <div className="nav-container">
+          <Link to="/" className="nav-logo">
+            <img src={Logo} alt="ASNI Logo" />
+          </Link>
 
-        <Link to='/contact' onClick={() => setIsOpen(false)}>
-        <li>Contact</li>
-        </Link>
+          <ul ref={menuRef} className={`nav-link ${isOpen ? 'active' : ''}`}>
+            {navLinks.map(({ path, label }) => (
+              <li key={path}>
+                <NavLink
+                  to={path}
+                  className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+                >
+                  {label}
+                </NavLink>
+              </li>
+            ))}
 
-        <Link to='/donation' onClick={() => setIsOpen(false)}>
-        <button className='button-34' type='button'>Donate Now</button>
-        </Link>
+            <li>
+              <Link to="/donation" className="btn nav-donate-btn">
+                Donate Now
+              </Link>
+            </li>
+          </ul>
 
-      </ul>
-      
-      <div className="icons">
-        <FaBars onClick={toggleMenu}/>
-      </div>
-    
-   </nav>
-   </>
-  )
+          <button
+            className="menu-toggle"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <FaXmark /> : <FaBars />}
+          </button>
+        </div>
+      </nav>
+
+      <div
+        className={`nav-backdrop ${isOpen ? 'active' : ''}`}
+        onClick={() => setIsOpen(false)}
+      />
+    </>
+  );
 }
 
-export default Navbar
+export default Navbar;

@@ -1,7 +1,6 @@
-.Home{
-    margin-top: -10px;
-    display:flex;
+.Home {
+    display: flex;
     flex-direction: column;
-    gap: 70px;   
-
-}
+    /* No gap needed - each section has its own padding */
+    /* No margin-top hack needed - App.css handles navbar spacing */
+  }

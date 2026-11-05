@@ -1,14 +1,98 @@
-.About-Intro{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items:center;
-    justify-content: center;
-    text-align: center;
-    width:100%;
-    color: #fff;
-    height: 50vh;
-    padding-top: 8%;
-    background-image: url(../../../assets/Images/About_background.png);
+/* --- Outer wrapper: FULL WIDTH with background image --- */
+.about-intro {
+  position: relative;
+  width: 100%;
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../../assets/Images/About_background.png'); /* Ensure this file exists */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
 
+/* --- Brand-colored overlay (Deep Forest Green) --- */
+.about-intro-overlay {
+  position: absolute;
+  inset: 0;
+  /* Using the brand dark green instead of black */
+  background: linear-gradient(
+    135deg,
+    rgba(31, 61, 51, 0.85) 0%, 
+    rgba(31, 61, 51, 0.95) 100%
+  );
+  z-index: 1;
+}
+
+/* --- Inner content --- */
+.about-intro-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* --- Tag (small label above title) --- */
+.page-tag {
+  color: var(--primary-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* --- Big heading --- */
+.about-intro-content h1 {
+  color: var(--white);
+  font-size: 4rem;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+/* --- Subtitle --- */
+.page-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.15rem;
+  max-width: 650px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 968px) {
+  .about-intro {
+    min-height: 50vh;
+  }
+  .about-intro-content h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-intro {
+    min-height: 45vh;
+  }
+  .about-intro-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 12px;
+  }
+  .about-intro-content h1 {
+    font-size: 2.5rem;
+  }
+  .page-subtitle {
+    font-size: 1rem;
+  }
 }

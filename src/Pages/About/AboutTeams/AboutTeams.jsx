@@ -1,39 +1,52 @@
-import React from 'react'
-import './AboutTeams.css'
-import Team1 from '../../../assets/Images/Team1_img.png'
-import Team2 from '../../../assets/Images/Team2_img.png'
-import Team3 from '../../../assets/Images/Team3_img.png'
+import Team1 from '../../../assets/Images/Team1_img.png'; // Change to .jpg if needed
+import Team2 from '../../../assets/Images/Team2_img.png';
+import Team3 from '../../../assets/Images/Team3_img.png';
+import './AboutTeams.css';
+
+const teamMembers = [
+  {
+    image: Team1,
+    name: 'Selam Abebe',
+    role: 'Founder & Director',
+  },
+  {
+    image: Team2,
+    name: 'Daniel Tesfaye',
+    role: 'Program Manager',
+  },
+  {
+    image: Team3,
+    name: 'Liya Mekonnen',
+    role: 'Community Outreach',
+  },
+];
 
 function AboutTeams() {
   return (
-    <div className="container About-teams">
-      <div className="Teams-title">
-            <p><b>Team</b></p>
-            <h2>Meet the Team</h2>
-            <p>Our mission is to bridge the educational gap for underprivileged students in Ethiopia</p>
-      </div>
-      <div className="Team-members">
-            <div className="Team-box">
-              <img src={Team1} alt='Selam Abebe'/>
-              <h3>Selam Abebe</h3>
-              <p>Founder & Director</p>
-            </div>
-
-            <div className="Team-box">
-              <img src={Team2} alt='Selam Abebe'/>
-              <h3>Daniel Tesfaye</h3>
-              <p>Founder & Director</p>
-            </div>
-
-            <div className="Team-box">
-              <img src={Team3} alt='Selam Abebe'/>
-              <h3>Liya Mekonnen</h3>
-              <p>Community Outreach</p>
-            </div>
+    <section className="container about-teams">
+      <div className="teams-title">
+        <p className="section-tag">Our Team</p>
+        <h2>Meet the Team</h2>
+        <p className="teams-subtitle">
+          Our mission is to bridge the educational gap for underprivileged students in Ethiopia.
+        </p>
       </div>
 
-    </div>
-  )
+      <div className="team-members">
+        {teamMembers.map(({ image, name, role }) => (
+          <div className="team-box" key={name}>
+            <div className="team-image-wrapper">
+              <img src={image} alt={name} />
+            </div>
+            <div className="team-info">
+              <h3>{name}</h3>
+              <p className="team-role">{role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
-export default AboutTeams
+export default AboutTeams;

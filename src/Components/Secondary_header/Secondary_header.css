@@ -1,29 +1,75 @@
-.header{
-    width: 100%;
-    display:flex;
-    flex-direction: row;
-    gap: 5%;
-    align-items:center;
-    justify-content: center;
-    padding-top: 15px;
-    padding-bottom: 10px;
-    background: #3C7965;
-    color: #fff;
-    
+/* --- Outer wrapper: FULL WIDTH, holds the dark green background --- */
+.header {
+  width: 100%;
+  background-color: var(--brand-dark); /* Deep Forest Green */
+  color: var(--white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle divider */
 }
-.Email{
-    display:flex;
-    gap:10px;
-    align-items: center;
+
+/* --- Inner container: centered content --- */
+.header-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px; /* Better spacing than 5% */
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
-.Email img{
-    width: 30px;
+
+.Email,
+.Phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
 }
-.Phone{
-    display:flex;
-    gap:10px;
-    align-items: center;
+
+.Email:hover,
+.Phone:hover {
+  transform: translateY(-1px);
 }
-.Phone img{
-    width: 30px;
+
+.Email img,
+.Phone img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  /* 
+    This filter turns black icons into your exact Warm Gold color.
+    If your icons look weird, change it to: filter: brightness(0) invert(1); 
+    to make them pure white instead.
+  */
+  filter: brightness(0) saturate(100%) invert(74%) sepia(60%) saturate(1500%) hue-rotate(360deg) brightness(102%) contrast(94%);
+}
+
+.Email p,
+.Phone p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.85); /* Slightly muted white for a premium look */
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .Email p,
+  .Phone p {
+    font-size: 0.8rem;
+  }
+
+  .Email img,
+  .Phone img {
+    width: 14px;
+    height: 14px;
+  }
 }

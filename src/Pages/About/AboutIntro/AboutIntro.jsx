@@ -1,13 +1,18 @@
-import React from 'react'
-import './AboutIntro.css'
+import './AboutIntro.css';
 
 function AboutIntro() {
   return (
-    <div className="container About-Intro">
-      <h2>About Us</h2>
-      <p>Lorem ipsum dolor sit amet consectetur.</p>
-    </div>
-  )
+    <section className="about-intro">
+      <div className="about-intro-overlay" />
+      <div className="container about-intro-content">
+        <p className="page-tag">Who We Are</p>
+        <h1>About Us</h1>
+        <p className="page-subtitle">
+          Learn about our mission, our team, and the students whose lives we're changing.
+        </p>
+      </div>
+    </section>
+  );
 }
 
-export default AboutIntro
+export default AboutIntro;

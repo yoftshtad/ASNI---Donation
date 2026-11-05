@@ -1,11 +1,5 @@
-.About{
-    margin-top: -10px;
-    display:flex;
+.About {
+    display: flex;
     flex-direction: column;
-    gap: 70px; 
-
-    
-}
-.About .nav-link{
-    color: #fff;
-}
+    /* Sections have their own padding - no gap needed */
+  }

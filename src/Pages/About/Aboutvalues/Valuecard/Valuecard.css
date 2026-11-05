@@ -1,21 +1,88 @@
-.valuecard{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background-color: #fff;
-    text-align: center;
-    align-items: center;
-    padding: 30px;
-    width: 30%;
-    border-radius: 10px;
-    box-shadow: rgba(137, 107, 58, 0.2) 0px 7px 29px 0px;
-
-
+.valuecard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 40px 30px;
+  background-color: var(--white);
+  border-radius: 24px;
+  /* Premium subtle border and shadow */
+  border: 1px solid rgba(31, 61, 51, 0.05);
+  box-shadow: 0 10px 30px rgba(31, 61, 51, 0.04);
+  transition: var(--transition);
+  height: 100%;
+  width: 100%;
 }
-@media (max-width: 768px){
-    .valuecard{
-        width: 70%; 
-        
-        
-    }
+
+.valuecard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(31, 61, 51, 0.08);
+  border-color: rgba(232, 163, 23, 0.3); /* Gold border on hover */
+}
+
+/* --- Circular Icon Badge --- */
+.valuecard-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(232, 163, 23, 0.1); /* Soft gold background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  margin-bottom: 8px;
+}
+
+.valuecard:hover .valuecard-icon {
+  background-color: var(--primary-color); /* Solid gold on hover */
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(232, 163, 23, 0.3);
+}
+
+.valuecard-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+/* Turn the icon white when card is hovered */
+.valuecard:hover .valuecard-icon img {
+  filter: brightness(0) invert(1);
+}
+
+/* --- Text --- */
+.valuecard h3 {
+  font-family: "Volkhov", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin: 0;
+}
+
+.valuecard p {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .valuecard {
+    padding: 30px 20px;
+  }
+
+  .valuecard-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .valuecard-icon img {
+    width: 34px;
+    height: 34px;
+  }
 }

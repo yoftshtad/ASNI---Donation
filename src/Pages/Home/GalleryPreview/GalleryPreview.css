@@ -1,0 +1,83 @@
+.gallery-preview-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  
+  .gallery-preview-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    max-width: 600px;
+  }
+  
+  .gallery-preview-subtitle {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  .gallery-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  .preview-item {
+    aspect-ratio: 4 / 5; /* Changed from 1/1 to 4/5 for a nicer portrait look */
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(31, 61, 51, 0.05);
+    box-shadow: 0 10px 30px rgba(31, 61, 51, 0.04);
+    transition: var(--transition);
+  }
+  
+  .preview-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(31, 61, 51, 0.08);
+    border-color: rgba(232, 163, 23, 0.3);
+  }
+  
+  .preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .preview-item:hover img {
+    transform: scale(1.08);
+  }
+  
+  .gallery-preview-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .gallery-preview-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  /* Mobile */
+  @media (max-width: 768px) {
+    .gallery-preview-section {
+      padding-top: 60px;
+      padding-bottom: 60px;
+      gap: 30px;
+    }
+    .gallery-preview-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+  }

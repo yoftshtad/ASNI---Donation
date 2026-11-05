@@ -1,34 +1,52 @@
-.Blog{
-    display:flex;
-    flex-direction: column;
-    gap: 30px;
+.Blog {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
-.Cards{
-    display: flex;
-    width:100%;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
 
-    
+/* --- Section Title Styling --- */
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  max-width: 600px;
+  margin: 0 auto;
 }
-.title{
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display:flex;
-    flex-direction: column;
-    gap: 10px;
+
+.title h2 {
+  margin: 0;
+  color: var(--brand-dark);
 }
-@media(max-width: 768px){
-    .Cards{
-        flex-direction: column;
-        margin-left: 30%;
-        gap: 40px;       
-    }
-    .Blog{
-        justify-content: center;
-        align-items: center;
-        
-    }
+
+.section-subtitle {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Grid Layout for Cards --- */
+.Cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  width: 100%;
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 768px) {
+  .Blog {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 40px;
+  }
+  
+  .Cards {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 }
